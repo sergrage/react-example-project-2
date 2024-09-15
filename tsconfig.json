@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      // для абсолютного импорта
+      "baseUrl": ".",
+      "outDir": "./dist/",
+      // нельзя использовать переменные без типа
+      "noImplicitAny": true,
+      // какую модульную систему использовать - обчно ESnext
+      "module": "ESNext",
+      // в какую версию ecmascript компилить код
+      "target": "es5",
+      "jsx": "react-jsx",
+      // обработка и ts и js
+      "allowJs": true,
+      "moduleResolution": "node",
+      // позволяет  исп. default import вместо * as
+      "allowSyntheticDefaultImports": true,
+      // позволяет вместо common js required использвать import
+      "esModuleInterop": true,
+    },
+    "ts-node": {
+        "compilerOptions": {
+          "module": "CommonJS"
+        }
+      }
+  }
