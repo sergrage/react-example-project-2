@@ -1,4 +1,3 @@
-import path from "path";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugins";
 import { buildResolvers } from "./buildResolvers";
@@ -16,7 +15,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
           rules: buildLoaders(options),
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         plugins: buildPlugins(paths.html),
         devtool: isDev ? 'inline-source-map' : undefined, // чтоб webpack показывал в каком файле ошибка. для этого он будет делать map файлы
         output: {

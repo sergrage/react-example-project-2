@@ -2,6 +2,9 @@
     "compilerOptions": {
       // для абсолютного импорта
       "baseUrl": ".",
+      "paths": {
+        "*" : ["./src/*"]
+      },
       "outDir": "./dist/",
       // нельзя использовать переменные без типа
       "noImplicitAny": true,
