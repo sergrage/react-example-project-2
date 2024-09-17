@@ -1,4 +1,4 @@
-export function classNames(cls: string, mods: Record<string, boolean | string>, additional: string[]): string {
+export function classNames(cls: string, mods: Record<string, boolean | string> = {}, additional: string[] = []): string {
     return [
         cls,
         ...additional,
