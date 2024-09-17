@@ -1,7 +1,3 @@
-import { Link } from "react-router-dom";
-
-// import classes from "./App.module.scss";
-
 import "./styles/index.scss";
 
 import { useTheme } from "app/providers/ThemeProvider/index";
@@ -9,6 +5,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { Suspense } from "react";
 
 export enum Theme {
     LIGHT = 'light',
@@ -16,18 +13,17 @@ export enum Theme {
 }
 
 const App = () => {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
     return (
         <div className={classNames('app', {}, [theme])}>
+            <Suspense fallback="">
             <Navbar />
             <div className="content">
                 <Sidebar />
                 <AppRouter />   
             </div>
-
+            </Suspense>
         </div>
-
-
     )
 }
 

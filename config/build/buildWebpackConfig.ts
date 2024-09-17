@@ -16,7 +16,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
           rules: buildLoaders(options),
         },
         resolve: buildResolvers(options),
-        plugins: buildPlugins(paths.html),
+        plugins: buildPlugins(paths.html, isDev),
         devtool: isDev ? 'inline-source-map' : undefined, // чтоб webpack показывал в каком файле ошибка. для этого он будет делать map файлы
         output: {
           filename: '[name].[contenthash].js', // имя - main (по умолчанию) + hash - для обновления браузером

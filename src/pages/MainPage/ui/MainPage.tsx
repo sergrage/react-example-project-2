@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
+
 const MainPage = () => {
+    const {t} = useTranslation('mainPage');
     return (
-        <h1>MainPage</h1>
+        <h1>{t('mainHeader')}</h1>
     )
 }
 

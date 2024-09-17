@@ -2,6 +2,6 @@ export function classNames(cls: string, mods: Record<string, boolean | string> =
     return [
         cls,
         ...additional,
-        ...Object.entries(mods).filter(([_, val]) => Boolean(val)).map(([className, _]) => className)
+        ...Object.entries(mods).filter(([, val]) => Boolean(val)).map(([className]) => className)
     ].join(' ');
 }
