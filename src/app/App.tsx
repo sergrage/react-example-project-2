@@ -6,6 +6,9 @@ import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallBack } from "widgets/ErrorFallBack";
+
 
 export enum Theme {
     LIGHT = 'light',
@@ -16,13 +19,16 @@ const App = () => {
     const { theme } = useTheme();
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-            <Navbar />
-            <div className="content">
-                <Sidebar />
-                <AppRouter />   
-            </div>
-            </Suspense>
+            <ErrorBoundary FallbackComponent={ErrorFallBack}>
+                <Suspense fallback="">
+                    <Navbar />
+                    <div className="content">
+                        <Sidebar />
+                        <AppRouter />
+                    </div>
+                </Suspense>
+            </ErrorBoundary>
+
         </div>
     )
 }

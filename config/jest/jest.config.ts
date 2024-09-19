@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from "path";
+
 /** @type {import('jest').Config} */
 const config = {
   // All imported modules in your tests should be mocked automatically
@@ -22,6 +24,8 @@ const config = {
   coveragePathIgnorePatterns: [
     "\\\\node_modules\\\\"
   ],
+
+  setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -87,6 +91,10 @@ const config = {
     "tsx",
     "json",
     "node"
+  ],
+
+  modulePaths: [
+    "<rootDir>src",
   ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
@@ -174,7 +182,14 @@ const config = {
   // testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  // transform: {
+  //   '^.+\\.(ts|tsx)$': 'ts-jest', // For TypeScript
+  //   '^.+\\.(js|jsx)$': 'babel-jest', // For JavaScript
+  // },
+  moduleNameMapper: {
+    '\\.(scss)$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

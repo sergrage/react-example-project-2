@@ -8,3 +8,11 @@
     background: none;
     outline: none;
 }
+
+.round {
+    border: 1px solid var(--secondary-color);
+    background: var(--bg-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    padding: 10px;
+}

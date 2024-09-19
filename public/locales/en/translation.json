@@ -1,5 +1,6 @@
 {
   "mainLink": "Main",
   "aboutLink": "About",
-  "hide": "Hide"
+  "hide": "Hide",
+  "errorFallBack": "Error: somthing go wrong( "
 }
