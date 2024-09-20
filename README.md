@@ -1,5 +1,5 @@
 # REACT + webpack
 # FSD
-# Jest
+# Jest + Storybook + Loki
 # i18n
 # eslint, stylelint
