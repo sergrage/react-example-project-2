@@ -61,3 +61,4 @@ src/**/*.map
 .idea/
 *.swp
 *.iml
+*storybook.log

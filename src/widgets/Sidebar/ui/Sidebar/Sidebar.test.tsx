@@ -2,7 +2,6 @@ import { fireEvent, screen} from "@testing-library/react";
 import '@testing-library/jest-dom'
 import { Sidebar } from "./Sidebar";
 import { renderWithTranslation } from "../../../../shared/lib/tests/renderWithTranslation/renderWithTranslation";
-import React from "react";
 
 
 describe('Sidebar', () => {
