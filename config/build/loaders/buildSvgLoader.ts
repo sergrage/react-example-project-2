@@ -1,6 +1,11 @@
 export function buildSvgLoader() {
     return {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
+      test: /\.svg$/i,
+      use: ['@svgr/webpack'],
+    resolve: {
+      alias: {
+        react: require.resolve('react'),
       }
+    }
+  }
 }
