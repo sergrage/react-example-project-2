@@ -9,6 +9,6 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
        alias: {
 
        },
-       extensions: ['.tsx', '.ts', '.js', '.svg'], // для этих файлов не указывается расширение при import
+       extensions: ['.tsx', '.ts', '.js'], // для этих файлов не указывается расширение при import
       }
 }
