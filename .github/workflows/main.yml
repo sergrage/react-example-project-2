@@ -17,7 +17,7 @@ jobs:
       - name: Starting Node.js ${{matrix.node-version}}
         uses: actions/setup-node@v3
       - name: Clear npm cash
-        run: npm run clean
+        run: npm cache clean --force
       - name: Install modules
         run: npm install
       - name: Build production project
