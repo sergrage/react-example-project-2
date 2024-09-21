@@ -1,8 +1,8 @@
 import {classNames} from "shared/lib/classNames/classNames"
 import { useTheme } from "app/providers/ThemeProvider";
 
-import ThemeDarkIcon from "shared/assets/icons/theme-dark.svg?react";
-import ThemeLightIcon from "shared/assets/icons/theme-light.svg?react";
+import ThemeDarkIcon from "shared/assets/icons/theme-dark.svg";
+import ThemeLightIcon from "shared/assets/icons/theme-light.svg";
 import { Theme } from "app/providers/ThemeProvider/index";
 import { Button, ThemeButton } from "shared/ui/Button/Button";
 
