@@ -3,22 +3,8 @@ export function buildSvgLoader() {
       test: /\.svg?$/,
       oneOf: [
         {
-          use: [
-            {
-              loader: '@svgr/webpack',
-              options: {
-                prettier: false,
-                // svgo: true,
-                // svgoConfig: {
-                //   plugins: [{removeViewBox: false}],
-                // },
-                titleProp: true,
-              },
-            },
-          ],
-          issuer: {
-            and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-          },
+          use: ['@svgr/webpack', 'file-loader'],
+          issuer: /\.[jt]sx?$/,
         },
       ]
   }
