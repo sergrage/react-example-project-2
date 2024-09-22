@@ -2,6 +2,7 @@
     "extends": ["stylelint-config-standard"],
     "rules": {
         "selector-class-pattern": null,
-        "no-invalid-double-slash-comments": null
+        "no-invalid-double-slash-comments": null,
+        "import-notation": null
       }
 }

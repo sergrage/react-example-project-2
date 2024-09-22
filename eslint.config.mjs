@@ -9,7 +9,7 @@ export default [
   i18next.configs['flat/recommended'],
   {
     ignores: [
-      '**/build/*',
+      '**/build/*', '**/node_modules/*', '**/storybook-static/*'
     ]
   },
   js.configs.recommended,
