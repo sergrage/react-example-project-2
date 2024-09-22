@@ -28,3 +28,5 @@ jobs:
         run: npm run lint:css
       - name: Unit Tests
         run: npm run test:unit
+      - name: UI Tests
+        run: npm run test:ui:ci
