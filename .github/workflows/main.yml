@@ -19,7 +19,7 @@ jobs:
       - name: Clear npm cash
         run: npm cache clean --force
       - name: Install modules
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Build production project
         run: npm run build:prod
       - name: Linting typescript
