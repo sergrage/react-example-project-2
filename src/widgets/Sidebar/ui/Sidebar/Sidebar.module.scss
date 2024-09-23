@@ -9,6 +9,10 @@
 .collapsed {
     width: var(--sidebar-collapsed-width);
     transition: all .3s;
+
+    .switchers { 
+        flex-direction: column;
+    }
 }
 
 .switchers {
@@ -17,8 +21,6 @@
     bottom: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.lang {
-    margin: 8px !important;
-}

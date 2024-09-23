@@ -13,9 +13,9 @@ jobs:
         node-version: [20.x]
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4 # копирует код репы в рабочий каталог VM
       - name: Starting Node.js ${{matrix.node-version}}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
       - name: Clear npm cash
         run: npm cache clean --force
       - name: Install modules
@@ -24,11 +24,16 @@ jobs:
         run: npm run build:prod
       - name: Linting typescript
         run: npm run lint:ts
+        if: always()
       - name: Linting SCSS
         run: npm run lint:css
+        if: always()
       - name: Unit Tests
         run: npm run test:unit
       - name: build storybook
         run: npm run build-storybook
+        if: always()
       - name: UI Tests
         run: npm run test:ui:ci
+        if: always()
+# git commit -m 'commit text [sctions skip]' - для игнора actions при push 
