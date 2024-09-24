@@ -2,5 +2,6 @@
   "mainLink": "Main",
   "aboutLink": "About",
   "hide": "Hide",
-  "errorFallBack": "Error: somthing go wrong( "
+  "errorFallBack": "Error: somthing go wrong( ",
+  "LoginBtn": "Login"
 }

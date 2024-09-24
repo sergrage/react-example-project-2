@@ -42,6 +42,7 @@ export const Clear: Story = {
 export const ClearDark: Story = {
   args: {
     children: 'TEST',
+    theme: ThemeButton.CLEAR,
   },
 };
 ClearDark.decorators = [themeDecorator(Theme.DARK)];
@@ -60,4 +61,14 @@ export const RoundDark: Story = {
     theme: ThemeButton.ROUND,
   },
 };
+
 RoundDark.decorators = [themeDecorator(Theme.DARK)];
+
+export const PrimaryBtn: Story = {
+  args: {
+    children: 'TEST',
+    theme: ThemeButton.PRIME,
+  },
+};
+
+

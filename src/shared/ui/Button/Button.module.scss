@@ -19,6 +19,14 @@
     margin: .25rem .125rem;
 }
 
+.prime {
+    background: var(--primary-btn-color);
+    border: 1px solid var(--primary-btn-color);
+    padding: 10px;
+    border-radius: 10%;
+    color: var(--white-color);
+}
+
 .icon {
     margin: .25rem .125rem;
     color: var(--primary-color);

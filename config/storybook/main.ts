@@ -1,14 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
-  // babel: async () => ({
-  //   presets: [
-  //     [
-  //       "@babel/preset-env",
-  //       ["@babel/preset-react", {"runtime": "automatic"}]
-  //     ],
-  //   ],
-  // }),
   stories: ["../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     "@storybook/addon-webpack5-compiler-swc",
