@@ -1,4 +1,4 @@
-# React JS + Webpack
+# React JS + Redux Toolkit + Webpack
 # FSD
 # Jest + Storybook + Loki
 # i18n

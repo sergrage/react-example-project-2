@@ -37,8 +37,6 @@
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     user-select: none;
     background-color: transparent;
     padding: .375rem .75rem;
@@ -52,7 +50,6 @@
 
     &:hover {
         color: #fff;
-
         background-color: #0d6efd;
         border-color: #0d6efd;
 
