@@ -29,5 +29,11 @@ export default ({config}): {config: webpack.Configuration} => {
         filename: 'css/[name].[contenthash:8].css',
         chunkFilename: 'css/[name].[contenthash:8].css'
       }))
+
+    config.plugins.push(
+        new webpack.DefinePlugin({
+            __IS_DEV__: true
+        })
+    );
     return config;
 }
