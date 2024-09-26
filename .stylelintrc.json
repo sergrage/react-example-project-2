@@ -4,6 +4,7 @@
         "selector-class-pattern": null,
         "no-invalid-double-slash-comments": null,
         "import-notation": null,
-        "no-descending-specificity": null
+        "no-descending-specificity": null,
+        "block-no-empty": null
       }
 }

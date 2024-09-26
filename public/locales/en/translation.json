@@ -3,5 +3,6 @@
   "aboutLink": "About",
   "hide": "Hide",
   "errorFallBack": "Error: somthing go wrong( ",
-  "LoginBtn": "Login"
+  "LoginBtn": "Login",
+  "Sign-In": "Sign-In"
 }

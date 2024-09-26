@@ -7,14 +7,23 @@ interface ModalProps {
   className?: string;
   children: ReactNode | ReactNode[];
   isOpen: boolean;
+  lazyLoad?: boolean;
   onClose?: () => void;
 }
-export const Modal = ({ className, isOpen = true, onClose, children }: ModalProps) => {
-  const [domReady, setDomReady] = useState(false);
+export const Modal = ({ className, isOpen = true, lazyLoad = false, onClose, children }: ModalProps) => {
+  const [domReady, setDomReady] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
     setDomReady(true)
   }, [])
+
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen])
 
   const onKeyDownHandler = useCallback((event: KeyboardEvent) => {
     if (event.key === 'Escape') {
@@ -46,16 +55,20 @@ export const Modal = ({ className, isOpen = true, onClose, children }: ModalProp
     event.stopPropagation();
   }
 
+  if (lazyLoad && !isMounted) {
+    return null;
+  }
+
   return (
-  domReady ?
-    <Portal element={document.querySelector('.app')} >
-      <div className={classNames(classes.Modal, mods, [className])}>
-        <div className={classes.overlay} onClick={closeModal} role='button'>
-          <div className={classes.content} onClick={onModalClick}>
-            {children}
+    domReady ?
+      <Portal element={document.querySelector('.app')} >
+        <div className={classNames(classes.Modal, mods, [className])}>
+          <div className={classes.overlay} onClick={closeModal} role='button'>
+            <div className={classes.content} onClick={onModalClick}>
+              {children}
+            </div>
           </div>
         </div>
-      </div>
-    </Portal > : null
+      </Portal > : null
   )
 }
