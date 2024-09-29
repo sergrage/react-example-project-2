@@ -3,9 +3,12 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallBack } from "widgets/ErrorFallBack";
+import { useDispatch } from "react-redux";
+import { userActions } from "entities/User";
+
 
 export enum Theme {
     LIGHT = 'light',
@@ -14,6 +17,12 @@ export enum Theme {
 
 const App = () => {
     const { theme } = useTheme();
+    const dispatch = useDispatch();
+
+    useEffect(()=> {
+        dispatch(userActions.initAuthUser());
+    }, [])
+
     return (
         <div className={classNames('app', {}, [theme])}>
             <ErrorBoundary FallbackComponent={ErrorFallBack}>

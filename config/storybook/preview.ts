@@ -16,7 +16,7 @@ const preview: Preview = {
   },
   decorators:[
     themeDecorator(Theme.LIGHT),
-    storeDecorator
+    storeDecorator({})
   ]
 };
 

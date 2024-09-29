@@ -1,3 +1,4 @@
+const { log } = require('console');
 const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
@@ -24,9 +25,10 @@ server.post('/login', (req, res) => {
         const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
         const { users = [] } = db;
 
-        const userFromBd = users.find(
-            (user) => user.username === username && user.password === password,
-        );
+        const userFromBd = users.find(user => {
+            return user.username === username && user.password === password
+
+        });
 
         if (userFromBd) {
             return res.json(userFromBd);

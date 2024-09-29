@@ -4,5 +4,8 @@
   "hide": "Hide",
   "errorFallBack": "Error: somthing go wrong( ",
   "LoginBtn": "Login",
-  "Sign-In": "Sign-In"
+  "Sign-In": "Sign-In",
+  "AuthForm": "Authorization frorm",
+  "AuthFormError": "Data is wrong",
+  "LogoutBtn": "Logout"
 }

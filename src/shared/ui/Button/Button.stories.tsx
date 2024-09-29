@@ -71,4 +71,9 @@ export const PrimaryBtn: Story = {
   },
 };
 
-
+export const DisabledBtn: Story = {
+  args: {
+    children: 'TEST',
+    disabled: true,
+  },
+};

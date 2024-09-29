@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { Theme, ThemeProvider } from "app/providers/ThemeProvider"
 
 export const themeDecorator = (theme: Theme) => (StoreComponent: React.ComponentType  ) =>  {

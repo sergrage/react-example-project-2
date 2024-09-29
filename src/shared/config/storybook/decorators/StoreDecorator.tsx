@@ -1,9 +1,9 @@
-/* eslint-disable react/display-name */
-import { StoreProvider } from "app/providers/StoreProvider"
+import { StateSchema, StoreProvider } from "app/providers/StoreProvider"
+import { DeepPartial } from "app/types/types"
 
-export const storeDecorator = (StoreComponent: React.ComponentType) => {
+export const storeDecorator = (state: DeepPartial<StateSchema>) => (StoreComponent: React.ComponentType) => {
     return (
-        <StoreProvider >
+        <StoreProvider initialState={state}>
             <StoreComponent />
         </StoreProvider>
     )
