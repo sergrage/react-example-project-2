@@ -44,7 +44,7 @@ export const Navbar = ({ className }: NavbarProps) => {
         <AppLink to={RoutePath.about}>{t('aboutLink')}</AppLink>
         <Button className={classNames(classes.loginBtn)} theme={ThemeButton.PRIME} onClick={toggleModal}>{t('LoginBtn')}</Button>
       </div>
-      <LoginModal isOpen={isOpenAuthModal} onClose={toggleModal} />
+      {isOpenAuthModal && <LoginModal isOpen={isOpenAuthModal} onClose={toggleModal} />}
     </div>
   )
 };

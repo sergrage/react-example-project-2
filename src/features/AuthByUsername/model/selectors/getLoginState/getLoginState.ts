@@ -1,5 +1,7 @@
 import { StateSchema } from "app/providers/StoreProvider";
 
 export const getLoginState = (state: StateSchema) => {
-    return state.loginForm
+    return state?.loginForm || {
+        username : '', password : '', isLoading : false, error : ''
+    }
 }
