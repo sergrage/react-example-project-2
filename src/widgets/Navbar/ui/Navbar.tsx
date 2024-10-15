@@ -1,9 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import classes from "./Navbar.module.scss";
-import { AppLink } from "shared/ui/AppLink/AppLink";
 import { useTranslation } from "react-i18next";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
-import { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { Button, ThemeButton } from "shared/ui/Button/Button";
 import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +11,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isOpenAuthModal, setIsOpenAuthModal] = useState<boolean>(false);
   const dispatch = useDispatch();
@@ -30,7 +28,6 @@ export const Navbar = ({ className }: NavbarProps) => {
     return (
       <div className={classNames(classes.Navbar, {}, [className])}>
         <div className={classNames(classes.links)}>
-
           <Button className={classNames(classes.loginBtn)} theme={ThemeButton.PRIME} onClick={onLogout}>{t('LogoutBtn')}</Button>
         </div>
       </div>
@@ -40,13 +37,11 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={classNames(classes.Navbar, {}, [className])}>
       <div className={classNames(classes.links)}>
-        <AppLink to={RoutePath.main} className={classNames(classes.mainLink)}>{t('mainLink')}</AppLink>
-        <AppLink to={RoutePath.about}>{t('aboutLink')}</AppLink>
         <Button className={classNames(classes.loginBtn)} theme={ThemeButton.PRIME} onClick={toggleModal}>{t('LoginBtn')}</Button>
       </div>
       {isOpenAuthModal && <LoginModal isOpen={isOpenAuthModal} onClose={toggleModal} />}
     </div>
   )
-};
+});
 
 

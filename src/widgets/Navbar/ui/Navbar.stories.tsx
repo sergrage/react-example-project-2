@@ -23,7 +23,7 @@ export const Light: Story = {
   },
 };
 
-Light.decorators = [routerDecorator];
+Light.decorators = [];
 
 export const Dark: Story = {
     args: {
@@ -31,4 +31,4 @@ export const Dark: Story = {
     },
   };
   
-Dark.decorators = [themeDecorator(Theme.DARK), routerDecorator];
+Dark.decorators = [themeDecorator(Theme.DARK)];

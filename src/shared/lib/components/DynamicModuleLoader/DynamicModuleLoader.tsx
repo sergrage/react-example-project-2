@@ -9,8 +9,6 @@ export type ReducersList = {
     [name in redusersKeysType]?: Reducer
 }
 
-type ReducersListEntry = [redusersKeysType, Reducer];
-
 interface DynamicModuleLoaderProps {
     children: ReactNode;
     removeAfterUnmount?: boolean;
@@ -22,14 +20,14 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-            store.reducerManager.add(name, reducer)
+        Object.entries(reducers).forEach(([name, reducer]) => {
+            store.reducerManager?.add(name as redusersKeysType, reducer)
             dispatch({ type: `@INIT ${name} REDUSER` })
         })
         return () => {
             if (removeAfterUnmount) {
-                Object.keys(reducers).forEach((name: redusersKeysType) => {
-                    store.reducerManager.remove(name)
+                Object.keys(reducers).forEach((name) => {
+                    store.reducerManager?.remove(name as redusersKeysType)
                     dispatch({ type: `@DESTROY ${name} REDUSER` }) /// тут важно чтоб dospatch был после remove
                 })
             }

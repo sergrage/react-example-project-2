@@ -26,7 +26,7 @@ export const Modal = ({ className, isOpen = true, lazyLoad = false, onClose, chi
   }, [isOpen])
 
   const onKeyDownHandler = useCallback((event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && onClose) {
       onClose();
     }
   }, [onClose])
@@ -59,9 +59,18 @@ export const Modal = ({ className, isOpen = true, lazyLoad = false, onClose, chi
     return null;
   }
 
+  if (!domReady) {
+    return null;
+  }
+
+  const portalElement = document.querySelector(".app") as HTMLElement;
+  if (!portalElement) {
+    return null; // Возвращаем null, если элемент не найден
+  }
+
   return (
     domReady ?
-      <Portal element={document.querySelector('.app')} >
+      <Portal element={portalElement} >
         <div className={classNames(classes.Modal, mods, [className])}>
           <div className={classes.overlay} onClick={closeModal} role='button'>
             <div className={classes.content} onClick={onModalClick}>

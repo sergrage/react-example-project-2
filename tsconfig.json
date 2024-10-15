@@ -10,6 +10,7 @@
       "noImplicitAny": true,
       // какую модульную систему использовать - обчно ESnext
       "module": "ESNext",
+      "strict": true,
       // в какую версию ecmascript компилить код
       "target": "es5",
       "jsx": "react-jsx",

@@ -13,5 +13,15 @@
       "username": "admin",
       "password": "123"
     }
-  ]
+  ],
+  "profile": {
+    "firstname": "Ivan",
+    "lastname": "Ivanov",
+    "age": 37,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://i.pravatar.cc/300"
+  }
 }

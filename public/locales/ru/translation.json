@@ -1,6 +1,7 @@
 {
     "mainLink": "Главная",
     "aboutLink": "О проекте",
+    "profileLink": "Профайл",
     "hide": "Скрыть",
     "errorFallBack": "При работе приложения произошла ошибка( ",
     "LoginBtn": "Войти",

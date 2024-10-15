@@ -1,6 +1,7 @@
 {
   "mainLink": "Main",
   "aboutLink": "About",
+  "profileLink": "Profile",
   "hide": "Hide",
   "errorFallBack": "Error: somthing go wrong( ",
   "LoginBtn": "Login",

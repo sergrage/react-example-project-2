@@ -5,10 +5,10 @@ import { User } from "entities/User";
 
 
 const initialState: LoginSchema = {
-    isLoading: false,
-    username: '',
-    password: '',
-    error: '' 
+  isLoading: false,
+  username: '',
+  password: '',
+  error: ''
 };
 
 export const LoginSlice = createSlice({
@@ -16,26 +16,26 @@ export const LoginSlice = createSlice({
   initialState,
   reducers: {
     setUsername: (state, action: PayloadAction<string>) => {
-        state.username = action.payload
+      state.username = action.payload
     },
     setPassword: (state, action: PayloadAction<string>) => {
-        state.password = action.payload
+      state.password = action.payload
     }
   },
-    extraReducers: (builder) => {
+  extraReducers: (builder) => {
     builder
       .addCase(loginByUsername.pending, (state) => {
         state.error = undefined;
         state.isLoading = true;
       })
-      .addCase(loginByUsername.fulfilled, (state, action: PayloadAction<User>) => {
-        state.isLoading = false;
-        console.log(state, action.payload);
-      })
-      .addCase(loginByUsername.rejected, (state, action: PayloadAction<string>) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
+    builder.addCase(loginByUsername.fulfilled, (state, action: PayloadAction<User>) => {
+      state.isLoading = false;
+      console.log(state, action.payload);
+    })
+    builder.addCase(loginByUsername.rejected, (state, action: PayloadAction<string | undefined>) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    })
   },
 });
 
